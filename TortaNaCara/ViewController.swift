@@ -53,7 +53,6 @@ class ViewController: UIViewController {
     }
     
     func time2Apertado(img: AnyObject){
-        print("Time vermelho ganhou")
         
         if timeGanhador == 0 {
             self.view.backgroundColor = UIColor.blueColor()

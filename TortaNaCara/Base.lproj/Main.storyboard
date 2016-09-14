@@ -38,11 +38,26 @@
                                     <constraint firstAttribute="width" constant="240" id="sk8-jb-W01"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TEMPO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQQ-CW-dtX">
+                                <rect key="frame" x="440" y="281" width="140" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="44Q-gf-9e0"/>
+                                    <constraint firstAttribute="width" constant="140" id="rZ7-Ms-Ip3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lpy-il-ohx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T8q-lM-s16"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H2Q-Ga-xjw" secondAttribute="bottom" constant="30" id="TS5-aT-BAd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rQQ-CW-dtX" secondAttribute="bottom" constant="273" id="UIL-o5-E7f"/>
+                            <constraint firstItem="rQQ-CW-dtX" firstAttribute="leading" secondItem="lpy-il-ohx" secondAttribute="trailing" constant="20" id="V3h-51-WYD"/>
+                            <constraint firstItem="rQQ-CW-dtX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="261" id="YAg-AG-FaK"/>
+                            <constraint firstAttribute="trailing" secondItem="rQQ-CW-dtX" secondAttribute="trailing" constant="20" id="cmg-n0-aTw"/>
                             <constraint firstItem="IgQ-nK-12l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="djt-U8-eVE"/>
                             <constraint firstItem="lpy-il-ohx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eqd-lI-FlT"/>
                             <constraint firstItem="H2Q-Ga-xjw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gFX-Ef-Cxl"/>
@@ -59,6 +74,7 @@
                         <outlet property="botaoResetar" destination="lpy-il-ohx" id="vxn-3H-xp8"/>
                         <outlet property="botaoTime1" destination="IgQ-nK-12l" id="wma-pr-vHU"/>
                         <outlet property="botaoTime2" destination="H2Q-Ga-xjw" id="qP0-ow-Zcm"/>
+                        <outlet property="lblTimer" destination="rQQ-CW-dtX" id="7BR-Bq-8Rn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

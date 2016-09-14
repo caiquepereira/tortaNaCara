@@ -11,11 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
     var timeGanhador = 0
+    var count = 15
+    var tempo1 = NSTimer()
+    var tempo2 = NSTimer()
     
     @IBOutlet weak var botaoTime1: UIImageView!
     @IBOutlet weak var botaoTime2: UIImageView!
-    
     @IBOutlet weak var botaoResetar: UIImageView!
+    @IBOutlet weak var lblTimer: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +31,11 @@ class ViewController: UIViewController {
         botaoResetar.userInteractionEnabled = true
         botaoResetar.addGestureRecognizer(UITapGestureRecognizer(target:self, action:#selector(ViewController.botaoResetarApertado(_:))))
         
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+ 
     }
 
     
@@ -42,6 +44,11 @@ class ViewController: UIViewController {
         if timeGanhador == 0 {
             self.view.backgroundColor = UIColor.redColor()
             timeGanhador = 1
+            
+            count = 15
+            lblTimer.text = String("15")
+            tempo1 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
+            
         }
     }
     
@@ -51,15 +58,30 @@ class ViewController: UIViewController {
         if timeGanhador == 0 {
             self.view.backgroundColor = UIColor.blueColor()
             timeGanhador = 2
+            
+            count = 15
+            lblTimer.text = String("15")
+            tempo2 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
         }
     }
     
     
     func botaoResetarApertado(img: AnyObject){
-            timeGanhador = 0
-            self.view.backgroundColor = UIColor.whiteColor()
+        timeGanhador = 0
+        self.view.backgroundColor = UIColor.whiteColor()
+        tempo1.invalidate()
+        tempo2.invalidate()
+        lblTimer.text = String("TEMPO")
     }
-
+    
+    func update() {
+        if(count > 0) {
+            count -= 1
+            lblTimer.text = String(count)
+        }else{
+            lblTimer.text = String("FIM")
+        }
+    }
 
 }
 

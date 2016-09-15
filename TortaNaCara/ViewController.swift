@@ -12,8 +12,8 @@ class ViewController: UIViewController {
 
     var timeGanhador = 0
     var count = 15
-    var tempo1 = NSTimer()
-    var tempo2 = NSTimer()
+    var tempo1 = Timer()
+    var tempo2 = Timer()
     
     @IBOutlet weak var botaoTime1: UIImageView!
     @IBOutlet weak var botaoTime2: UIImageView!
@@ -22,14 +22,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        botaoTime1.userInteractionEnabled = true
-        botaoTime1.addGestureRecognizer(UITapGestureRecognizer(target:self, action:#selector(ViewController.time1Apertado(_:))))
-        
-        botaoTime2.userInteractionEnabled = true
-        botaoTime2.addGestureRecognizer(UITapGestureRecognizer(target:self, action:#selector(ViewController.time2Apertado(_:))))
-        
-        botaoResetar.userInteractionEnabled = true
-        botaoResetar.addGestureRecognizer(UITapGestureRecognizer(target:self, action:#selector(ViewController.botaoResetarApertado(_:))))
+        let tapTime1 = UITapGestureRecognizer(target: self, action: #selector(ViewController.time1Apertado))
+        botaoTime1.addGestureRecognizer(tapTime1)
+        botaoTime1.isUserInteractionEnabled = true
+
+        let tapTime2 = UITapGestureRecognizer(target: self, action: #selector(ViewController.time2Apertado))
+        botaoTime2.addGestureRecognizer(tapTime2)
+        botaoTime2.isUserInteractionEnabled = true
+
+        let tapResetarRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.botaoResetarApertado))
+        botaoResetar.addGestureRecognizer(tapResetarRecognizer)
+        botaoResetar.isUserInteractionEnabled = true
         
     }
 
@@ -39,35 +42,35 @@ class ViewController: UIViewController {
     }
 
     
-    func time1Apertado(img: AnyObject){
+    func time1Apertado(){
 
         if timeGanhador == 0 {
-            self.view.backgroundColor = UIColor.redColor()
+            self.view.backgroundColor = UIColor.red
             timeGanhador = 1
             
             count = 15
             lblTimer.text = String("15")
-            tempo1 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
+            tempo1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
             
         }
     }
     
-    func time2Apertado(img: AnyObject){
+    func time2Apertado(){
         
         if timeGanhador == 0 {
-            self.view.backgroundColor = UIColor.blueColor()
+            self.view.backgroundColor = UIColor.blue
             timeGanhador = 2
             
             count = 15
             lblTimer.text = String("15")
-            tempo2 = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
+            tempo2 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
         }
     }
     
     
-    func botaoResetarApertado(img: AnyObject){
+    func botaoResetarApertado(){
         timeGanhador = 0
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         tempo1.invalidate()
         tempo2.invalidate()
         lblTimer.text = String("TEMPO")
@@ -79,6 +82,7 @@ class ViewController: UIViewController {
             lblTimer.text = String(count)
         }else{
             lblTimer.text = String("FIM")
+            self.view.backgroundColor = UIColor.white
         }
     }
 

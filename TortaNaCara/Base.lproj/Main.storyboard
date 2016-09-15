@@ -18,11 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="botaoAzul" translatesAutoresizingMaskIntoConstraints="NO" id="H2Q-Ga-xjw">
-                                <frame key="frameInset" minX="-100" minY="807" width="968" height="949"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botaoAzul" translatesAutoresizingMaskIntoConstraints="NO" id="H2Q-Ga-xjw">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="Nua-8d-FjU"/>
-                                    <constraint firstAttribute="width" constant="160" id="gf5-Kh-lST"/>
+                                    <constraint firstAttribute="height" constant="949" id="Nua-8d-FjU"/>
+                                    <constraint firstAttribute="width" constant="968" id="gf5-Kh-lST"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reset" translatesAutoresizingMaskIntoConstraints="NO" id="lpy-il-ohx">
@@ -41,23 +40,22 @@
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="shadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="botao" translatesAutoresizingMaskIntoConstraints="NO" id="IgQ-nK-12l">
-                                <frame key="frameInset" minX="-100" minY="-737" width="968" height="949"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botao" translatesAutoresizingMaskIntoConstraints="NO" id="IgQ-nK-12l">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="9b7-dz-nOc"/>
-                                    <constraint firstAttribute="height" constant="160" id="m19-1B-7Is"/>
+                                    <constraint firstAttribute="width" constant="968" id="9b7-dz-nOc"/>
+                                    <constraint firstAttribute="height" constant="949" id="m19-1B-7Is"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lpy-il-ohx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T8q-lM-s16"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H2Q-Ga-xjw" secondAttribute="bottom" constant="30" id="TS5-aT-BAd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="H2Q-Ga-xjw" secondAttribute="bottom" constant="-732" id="TS5-aT-BAd"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rQQ-CW-dtX" secondAttribute="bottom" constant="273" id="UIL-o5-E7f"/>
                             <constraint firstItem="rQQ-CW-dtX" firstAttribute="leading" secondItem="lpy-il-ohx" secondAttribute="trailing" constant="20" id="V3h-51-WYD"/>
                             <constraint firstItem="rQQ-CW-dtX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="261" id="YAg-AG-FaK"/>
                             <constraint firstAttribute="trailing" secondItem="rQQ-CW-dtX" secondAttribute="trailing" constant="20" id="cmg-n0-aTw"/>
-                            <constraint firstItem="IgQ-nK-12l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="djt-U8-eVE"/>
+                            <constraint firstItem="IgQ-nK-12l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-757" id="djt-U8-eVE"/>
                             <constraint firstItem="lpy-il-ohx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eqd-lI-FlT"/>
                             <constraint firstItem="H2Q-Ga-xjw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gFX-Ef-Cxl"/>
                             <constraint firstItem="IgQ-nK-12l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m2x-1E-6mL"/>

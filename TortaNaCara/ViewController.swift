@@ -19,9 +19,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var botaoTime2: UIImageView!
     @IBOutlet weak var botaoResetar: UIImageView!
     @IBOutlet weak var lblTimer: UILabel!
+    @IBOutlet weak var lblPontosVermelho: UILabel!
+    @IBOutlet weak var lblPontosAzul: UILabel!
+    @IBOutlet weak var stepperVermelho: UIStepper!
+    @IBOutlet weak var stepperAzul: UIStepper!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        lblTimer.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        lblPontosVermelho.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        lblPontosAzul.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        //stepperVermelho.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        //stepperAzul.transform = CGAffineTransform(rotationAngle: CGFloat(-M_PI_2))
+        
+        
+        
         
         //Time 1
         let tapTime1 = UITapGestureRecognizer(target: self, action: #selector(ViewController.time1Apertado))
@@ -78,6 +92,7 @@ class ViewController: UIViewController {
             
             count = 15
             lblTimer.text = String("15")
+            tempo1 = Timer()
             tempo1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
             
         }
@@ -91,6 +106,7 @@ class ViewController: UIViewController {
             
             count = 15
             lblTimer.text = String("15")
+            tempo2 = Timer()
             tempo2 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
         }
     }
@@ -112,8 +128,21 @@ class ViewController: UIViewController {
             lblTimer.text = String("FIM")
             self.view.backgroundColor = UIColor.white
             timeGanhador = 0
+            
+            tempo1.invalidate()
+            tempo2.invalidate()
         }
     }
+    
+    
+    @IBAction func stepperVermelhorMudou(_ sender: AnyObject) {
+        lblPontosVermelho.text = "\(Int(stepperVermelho.value))"
+    }
+    
+    @IBAction func stepperAzulMudou(_ sender: AnyObject) {
+        lblPontosAzul.text = "\(Int(stepperAzul.value))"
+    }
+    
     
     
 
